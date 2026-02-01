@@ -8,7 +8,8 @@ interface SidebarProps {
     users?: User[];
 }
 
-export function Sidebar({ users = [] }: SidebarProps) {  const navItems = [
+export function Sidebar({ users = [] }: SidebarProps) {
+  const navItems = [
     { icon: <Users size={20} />, label: "Characters" },
     { icon: <MapIcon size={20} />, label: "Maps", active: true },
     { icon: <Box size={20} />, label: "Objects" },
