@@ -42,7 +42,7 @@ export function Sidebar({ users = [] }: SidebarProps) {
       <CharacterSwitcher isGM={true} />
 
       <div className={styles.footer}>
-          {users.length > 0 && <div>接続中: {users.length}人</div}
+          {users.length > 0 && <div>接続中: {users.length}人</div>}
         <div className={styles.userProfile}>
           <div className={styles.avatar}>T</div>
           <div className={styles.userInfo}>
