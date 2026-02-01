@@ -1,0 +1,174 @@
+.container {
+  position: absolute;
+  right: 352px; /* サイドバーの幅(320px) + 余白 */
+  bottom: 32px;
+  width: 380px;
+  height: 480px;
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+}
+
+.logSection {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 80px;
+  max-height: 150px;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.logSection:last-of-type {
+  border-bottom: none;
+}
+
+.logHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.messagesArea {
+  flex: 1;
+  padding: 8px 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.messageRow {
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.sender {
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-right: 6px;
+}
+
+.sender::after {
+  content: ':';
+}
+
+.text {
+  color: var(--text-main);
+}
+
+/* 入力エリア */
+.inputArea {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  gap: 8px;
+  flex-shrink: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.channelTabs {
+  display: flex;
+  gap: 2px;
+}
+
+.channelTab {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.channelTab:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.channelTab.active {
+  background: var(--accent-primary);
+  color: #000;
+  border-color: var(--accent-primary);
+}
+
+.input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: var(--accent-primary);
+}
+
+.sendButton {
+  background: var(--accent-primary);
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.sendButton:hover {
+  opacity: 0.9;
+}
+
+/* 表情クイックボタン */
+.expressionBar {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.expressionBtn {
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expressionBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent-primary);
+  transform: scale(1.1);
+}
+

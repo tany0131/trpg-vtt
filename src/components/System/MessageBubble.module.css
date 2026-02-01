@@ -1,0 +1,131 @@
+.container {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  z-index: 100;
+  animation: slideIn 0.3s ease-out;
+  pointer-events: auto;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.container.complete {
+  animation: fadeOut 0.5s ease-out 2.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* アバターセクション */
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a2a30 0%, #1a1a1e 100%);
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: avatarPop 0.4s ease-out;
+}
+
+@keyframes avatarPop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.avatarLetter {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.expression {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  font-size: 1.5rem;
+  background: var(--bg-panel-solid);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+/* メッセージウィンドウ */
+.messageWindow {
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  min-width: 300px;
+  max-width: 500px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: windowExpand 0.3s ease-out;
+}
+
+@keyframes windowExpand {
+  from {
+    opacity: 0;
+    transform: scaleX(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.nameTag {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #000;
+  display: inline-block;
+  border-radius: 0 0 8px 0;
+}
+
+.textArea {
+  padding: 16px 20px;
+  min-height: 60px;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.cursor {
+  color: var(--accent-primary);
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

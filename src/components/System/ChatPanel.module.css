@@ -1,0 +1,83 @@
+.chatContainer {
+  position: absolute;
+  right: 32px; /* Or relative to layout */
+  bottom: 120px; /* Above controls */
+  width: 320px;
+  height: 240px;
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+}
+
+.messagesArea {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.messageRow {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.sender {
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-right: 8px;
+}
+
+.text {
+  color: var(--text-main);
+}
+
+.time {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+  opacity: 0.7;
+}
+
+.inputArea {
+  display: flex;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  padding: 4px 8px;
+}
+
+.sendButton {
+  background: transparent;
+  border: none;
+  color: var(--accent-primary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.sendButton:hover {
+  opacity: 1;
+}

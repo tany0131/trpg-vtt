@@ -1,0 +1,126 @@
+.container {
+  position: absolute;
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  z-index: 50;
+  min-width: 300px;
+  min-height: 150px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: move;
+  user-select: none;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.grip {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.title {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s;
+}
+
+.controlBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+}
+
+.messagesArea {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.messageRow {
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.sender {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.sender::after {
+  content: ':';
+}
+
+.text {
+  color: var(--text-main);
+}
+
+/* リサイズハンドル */
+.resizeHandle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  cursor: se-resize;
+  background: linear-gradient(135deg, transparent 50%, var(--border-subtle) 50%);
+  border-radius: 0 0 var(--radius-lg) 0;
+}
+
+.resizeHandle:hover {
+  background: linear-gradient(135deg, transparent 50%, var(--accent-primary) 50%);
+}
+
+/* 最小化状態 */
+.minimized {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  transition: all 0.2s;
+  pointer-events: auto;
+  z-index: 50;
+}
+
+.minimized:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-primary);
+}
